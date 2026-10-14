@@ -4,7 +4,7 @@
 }
 body {
     height: 100vh;
-    background-color: #f0f8ff;
+    background-color: rgba(75, 0, 150, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,9 +17,9 @@ body {
     overflow: hidden;
 
     background: linear-gradient(
-        to bottom,
-        #87ceeb,
-        #0ff
+        to right,
+        #87e6eb,
+        rgb(255, 208, 0)
     );
 }
 .fish {
@@ -27,4 +27,5 @@ body {
     width: 100px;
     height: 75px;
     object-fit: contain;
+    cursor: pointer;
 }

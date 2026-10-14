@@ -22,9 +22,14 @@ class Fish {
 
     this.direction = Math.random() < 0.5 ? -1 : 1;
 
-    this.speed = Math.random() * 2 + 0.5;
+    this.normalSpeed = Math.random() * 1.5 + 0.5;
+    this.speed = this.normalSpeed;
+    this.speedTimer = null;
 
     this.updatePosition();
+    this.element.addEventListener("click", () => {
+        this.changeSpeed();
+    });
   }
   updatePosition() {
     this.element.style.left = this.x + "px";
@@ -59,6 +64,14 @@ class Fish {
     setTimeout(() => {
       this.checkDirection();
     }, delay);
+  }
+  changeSpeed() {
+    this.speed = this.normalSpeed * 3;
+    clearTimeout(this.speedTimer);
+    this.speedTimer = setTimeout(() => {
+        this.speed = this.normalSpeed;
+        this.speedTimer = null;
+    }, 3000);
   }
 }
 
